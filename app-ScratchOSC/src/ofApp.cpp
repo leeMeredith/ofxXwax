@@ -126,7 +126,6 @@ void ofApp::draw() {
 	ofSetColor(255);
 	
 	ofPushMatrix();
-	ofDrawBitmapString("pitch: " + ofToString(xwax.getPitch(), 2) + "x", 0, 20);
 	ofTranslate(10, ofGetHeight() - 140);
 	ofDrawBitmapString("pitch: " + ofToString(xwaxLeft.getPitch(), 2) + "x", 0, 20);
 	ofDrawBitmapString("velocity: " + ofToString(xwaxLeft.getVelocity(), 2) + " ms", 0, 40);
@@ -153,7 +152,6 @@ void ofApp::draw() {
 	ofDrawBitmapString("serial: " + ofToString(serialPort), 0, 100);
     ofDrawBitmapString("audioIn: " + audioInterface, 0, 120);
 	ofPopMatrix();
-	ofPushMatrix();
     
     //soundStream---------_
 	// draw the left:

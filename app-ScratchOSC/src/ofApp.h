@@ -20,6 +20,7 @@ public:
     ofxXwax xwaxLeft; 
     ofxXwax xwaxRight;
 	
+    ofxOscSender osc;
 	ofSerial serial;
 	
 	bool serialReady;
