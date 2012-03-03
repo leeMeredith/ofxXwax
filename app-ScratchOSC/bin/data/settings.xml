@@ -3,7 +3,7 @@
     format can be: serato_2a, serato_2b, serato_cd, traktor_a,
     traktor_b, mixvibes_v2, mixvibes_7inch
   -->
-  <format>serato_cd</format>
+  <format>mixvibes_v2</format>
   <side>right</side> <!-- changes the OSC message address -->
 </record>
 
@@ -18,13 +18,14 @@
 
 <!-- the samplerate/buffersize should match your audio settings -->
 <audio>
-  <samplerate>96000</samplerate>
+  <samplerate>44100</samplerate>
   <buffersize>128</buffersize>
+  <interface>M-Audio, Inc.: M-Audio Conectiv</interface>
 </audio>
 
 <serial>
-  <!-- the arduino should report a stream of bytes on this port -->
-  <port>tty.usbmodemfd121</port>
+  <!-- the arduino should report a stream of bytes on this port was tty.usbmodemfd121-->
+  <port>/dev/tty.usbmodem411</port>
   <!--
     when the serial data passes this threshold in either direction,
     a 0 or 1 is sent over OSC. in the future, this should be double-ended

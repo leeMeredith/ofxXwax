@@ -2,9 +2,13 @@
 
 #include "ofMain.h"
 #include "ofxXwax.h"
-
 #include "ofxXmlSettings.h"
+#include "drawVinyl.h"
+#include "drawCurve.h"
+#include "drawAudioInput.h"
 #include "ofxOsc.h"
+#include "ofxSoundStream.h"
+
 
 class ofApp : public ofBaseApp {
 public:
@@ -13,28 +17,48 @@ public:
 	void update();
 	void draw();
 	
-	void audioIn(float* input, int bufferSize, int nChannels); 
+    ofxXwax xwaxLeft; 
+    ofxXwax xwaxRight;
 	
-	ofxXwax xwax;
-	ofxOscSender osc;
 	ofSerial serial;
 	
 	bool serialReady;
 	unsigned char serialThreshold;
 	bool overThreshold;
 	
-	string recordFormat, recordSide, oscHost, serialPort;
+	string recordFormat, recordSide, oscHost, serialPort, audioInterface;
 	unsigned int oscPort, oscSubdivide, audioSamplerate, audioBuffersize;
 	float oscRate;
 	bool oscPitch, oscRelative, oscDegrees;
 	
-	void drawVinyl(float x, float y, float scale);
-	void drawAudioInput(float x, float y, float scale);
+    
+    drawVinyl drawVinyl_0;
+    drawAudioInput drawAudioInput_0;
+    
+    drawVinyl drawVinyl_1;
+    drawAudioInput drawAudioInput_1;
+    
+	
 	vector<float> middleAudioBuffer, frontAudioBuffer;
 	ofMutex audioMutex;
 	
-	void drawCurve(deque<float> curve, float scale, float min = 0, float max = 0);
+    vector<float> middleAudioBuffer_1, frontAudioBuffer_1;
+	ofMutex audioMutex_1;
+    
+    drawCurve drawCurve_0;
+    drawCurve drawCurve_1;
+    
 	deque<float> absolutePosition, relativePosition, faderPosition;
+    deque<float> absolutePosition_1, relativePosition_1, faderPosition_1;
 	
 	unsigned int audioFrame;
+    
+    
+    //soundStream---------_
+    vector<float> inputLeft, inputRight;
+    int nChannels;
+    void audioInputListener (ofxAudioEventArgs &args);
+	
+    ofxSoundStream c1;
+    //----soundStream-----_
 };

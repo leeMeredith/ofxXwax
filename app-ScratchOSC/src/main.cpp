@@ -3,6 +3,6 @@
 
 int main() {
 	ofAppGlutWindow window;
-	ofSetupOpenGL(&window, 768, 256, OF_WINDOW);
+	ofSetupOpenGL(&window, 768, 556, OF_WINDOW);
 	ofRunApp(new ofApp());
 }
