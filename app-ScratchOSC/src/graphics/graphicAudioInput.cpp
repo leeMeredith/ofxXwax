@@ -1,13 +1,13 @@
-#include "drawAudioInput.h"
+#include "graphicAudioInput.h"
 
 static const ofColor cyanPrint = ofColor::fromHex(0x00abec);
 static const ofColor magentaPrint = ofColor::fromHex(0xec008c);
 
-void drawAudioInput::setup(unsigned int newAudioBuffersize) {
+void graphicAudioInput::setup(unsigned int newAudioBuffersize) {
 	frontAudioBuffer.resize(newAudioBuffersize * 2);
 }
 
-void drawAudioInput::draw(float x, float y, float scale) {
+void graphicAudioInput::draw(float x, float y, float scale) {
 	frontAudioBuffer.resize(audioBuffersize * 2);
 	scale /= 4;
 	int resolution = MAX(audioBuffersize / scale, 1);

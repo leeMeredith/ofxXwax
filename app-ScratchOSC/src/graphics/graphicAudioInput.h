@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 
-class drawAudioInput{
+class graphicAudioInput{
 public:
     void setup(unsigned int newAudioBuffersize);
 	void draw(float x, float y, float scale);

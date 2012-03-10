@@ -1,9 +1,9 @@
-#include "drawVinyl.h"
+#include "graphicVinyl.h"
 
 static const ofColor magentaPrint = ofColor::fromHex(0xec008c);
 static const ofColor yellowPrint = ofColor::fromHex(0xffee00);
 
-void drawVinyl::draw(float x, float y, float scale) {
+void graphicVinyl::draw(float x, float y, float scale) {
 	scale /= 2;
 	ofPushStyle();
 	ofPushMatrix();

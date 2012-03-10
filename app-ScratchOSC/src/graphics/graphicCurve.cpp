@@ -1,8 +1,8 @@
-#include "drawCurve.h"
+#include "graphicCurve.h"
 
 static const ofColor yellowPrint = ofColor::fromHex(0xffee00);
 
-void drawCurve::draw(deque<float> curve, float scale, float min, float max) {
+void graphicCurve::draw(deque<float> curve, float scale, float min, float max) {
 	if(min == 0 && max == 0) {
 		for(int i = 0; i < curve.size(); i++) {
 			if(i == 0 || curve[i] < min) {

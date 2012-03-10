@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 
-class drawVinyl {
+class graphicVinyl {
 public:
 	void draw(float x, float y, float scale);
     float rotateAbsolute, rotateRelative;
